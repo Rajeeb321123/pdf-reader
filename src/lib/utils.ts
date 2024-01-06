@@ -22,7 +22,7 @@ export function absoluteUrl(path: string) {
 export function constructMetadata({
   title = "PDF Ai reader - The SaaS for students",
   description = "PDF Ai reader is an open-source software to make chatting to your PDF files easy using power of Ai",
-  image = "/thumbnail.ng",
+  image = "/thumbnail.png",
   icons = "/favicon.ico",
   // allow the search engine to crawl and index our website to show up in search
   noIndex = false 
