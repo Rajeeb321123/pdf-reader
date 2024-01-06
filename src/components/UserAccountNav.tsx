@@ -98,10 +98,12 @@ const UserAccountNav = async ({
                 <DropdownMenuSeparator />
 
                 <DropdownMenuItem className=" cursor-pointer text-red-600 flex flex-row gap-2 justify-between">
-                    <LogoutLink>
+                    <LogoutLink
+                    >
                         Log Out
+                        
                     </LogoutLink>
-                    <LogOut />
+                    
                 </DropdownMenuItem>
             </DropdownMenuContent>
 

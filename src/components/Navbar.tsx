@@ -5,6 +5,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import UserAccountNav from "./UserAccountNav";
+import MoblieNav from "./MoblieNav";
 
 
 const Navbar = () => {
@@ -30,8 +31,8 @@ const Navbar = () => {
                         PDF Companion.
                     </Link>
 
-                    {/*Todo: add mobile navbar*/}
-
+                    {/* VV imp: trick: !! convert user into boolean */}
+                    <MoblieNav isAuth={!!user}/>                    
                     <div
                         className="hidden items-center space-x-4 sm:flex"
                     >{!user ? (
