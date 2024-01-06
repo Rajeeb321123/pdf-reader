@@ -81,7 +81,7 @@ export default function MoblieNav({ isAuth }: { isAuth: boolean }) {
                                     <Link
                                         onClick={() => closeOnCurrent('/dashboard')}
                                         className="flex items-center w-full font-semibold "
-                                        href='/sign-up'
+                                        href='/dashboard'
                                     >
                                         Dashboard
                                         <ArrowRight className="ml-2 h-5 w-5" />

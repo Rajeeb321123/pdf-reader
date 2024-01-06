@@ -13,11 +13,13 @@ import { trpc } from '@/app/_trpc/client';
 import { useRouter } from 'next/navigation';
 
 
-const UploadDropzone = () => {
+const UploadDropzone = ({isSubscribed} : {isSubscribed: boolean} ) => {
 
   const [isUploading, setIsUploading] = useState< boolean|null > (false);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
-  const {startUpload} = useUploadThing("pdfUploader");
+  const {startUpload} = useUploadThing(
+      isSubscribed ? "proPlanUploader": "freePlanUploader"
+  );
   const {toast} = useToast();
   const router = useRouter();
 
@@ -116,7 +118,7 @@ const UploadDropzone = () => {
                   or drag and drop
                 </p>
                 <p className='text-xs text-zinc-500'>
-                  PDF (up to 4MB)
+                  PDF (up to {isSubscribed ? "2":"1"}MB)
                 </p>
               </div>
 
@@ -171,7 +173,7 @@ const UploadDropzone = () => {
   )
 }
 
-const UploadButton = () => {
+const UploadButton = ({isSubscribed} : {isSubscribed: boolean}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
@@ -194,7 +196,7 @@ const UploadButton = () => {
       </DialogTrigger>
 
       <DialogContent>
-        <UploadDropzone />
+        <UploadDropzone isSubscribed = {isSubscribed} />
       </DialogContent>
     </Dialog>
   )
